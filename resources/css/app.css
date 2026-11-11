@@ -1,0 +1,48 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/montserrat/600.css';
+@import '@fontsource/montserrat/700.css';
+@import '@fontsource/montserrat/800.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+    body { @apply bg-slate-50 text-slate-700 antialiased; font-size: 1.0625rem; }
+    h1, h2, h3, h4 { @apply font-display text-navy-800 tracking-tight; }
+    :focus-visible { @apply outline-none ring-4 ring-cyan-400/60 rounded-lg; }
+    [x-cloak] { display: none !important; }
+}
+
+@layer components {
+    .container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+    .village-map { height: clamp(24rem, 62vh, 46rem); }
+
+    .bento { @apply relative rounded-bento bg-white p-6 shadow-bento ring-1 ring-navy-100 transition duration-200; }
+    .bento-hover { @apply hover:-translate-y-0.5 hover:shadow-bento-hover hover:ring-emerald-200; }
+    .bento-navy { @apply rounded-bento bg-navy-800 p-6 text-navy-50 shadow-bento; }
+    .bento-navy h2, .bento-navy h3 { @apply text-white; }
+
+    .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-5 py-2.5 font-display text-sm font-semibold transition focus-visible:ring-4; }
+    .btn-primary { @apply btn bg-emerald-500 text-white shadow-lg shadow-emerald-500/25 hover:bg-emerald-600; }
+    .btn-navy { @apply btn bg-navy-800 text-white hover:bg-navy-700; }
+    .btn-ghost { @apply btn bg-white text-navy-800 ring-1 ring-navy-200 hover:bg-navy-50; }
+
+    .eyebrow { @apply inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 font-display text-xs font-bold uppercase tracking-wider text-emerald-700 ring-1 ring-emerald-200; }
+    .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1; }
+    .section { @apply py-14 sm:py-20; }
+    .section-title { @apply text-3xl font-extrabold sm:text-4xl; }
+    .section-lead { @apply mt-3 max-w-2xl text-lg text-slate-600; }
+
+    .nav-link { @apply rounded-full px-3 py-2 text-sm font-semibold text-navy-700 transition hover:bg-navy-50 hover:text-navy-900; }
+    .nav-link-active { @apply bg-navy-800 text-white hover:bg-navy-800 hover:text-white; }
+
+    .input { @apply block w-full rounded-xl border-0 bg-white px-4 py-2.5 text-sm text-navy-900 ring-1 ring-navy-200 placeholder:text-slate-400 focus:ring-2 focus:ring-emerald-500; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
